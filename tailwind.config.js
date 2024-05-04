@@ -12,8 +12,7 @@ export default {
     lg:'768px',
     xl:'992px',
     '2xl':'1092px',
-    '3xl':'1092px',
-    '4xl':'1280px',
+    '3xl':'1280px',
     }
   },
   plugins: [],
