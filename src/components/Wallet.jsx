@@ -1,8 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
 
 const Wallet = () => {
+  const {cartTotalAmount} = useSelector(state=>state.cart)
   return (
     
     <Link className='flex items-center gap-2' to={'/cart'}>
@@ -10,7 +12,7 @@ const Wallet = () => {
     <PiShoppingCartSimpleFill className='w-[18px] h-[18px]' />
     </div>
     
-    <p >4 000 so'm</p>
+    <p className='whitespace-nowrap'>{cartTotalAmount.toLocaleString()} so'm</p>
     </Link>
   
   )

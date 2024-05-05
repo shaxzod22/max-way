@@ -1,7 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SparkAd from './../assets/img/sparkAd.webp'
-import Clab from './../assets/img/clab.jpg'
+import Clab from './../assets/img/clab.webp'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -25,14 +25,14 @@ const Adcaroucel = () => {
         }}
         
         modules={[Pagination, Autoplay]}
-        autoplay={{delay:2000}}
+        autoplay={{delay:4000}}
         className="mySwiper"
         >
         <SwiperSlide>
-            <img src={SparkAd} className='object-cover rounded-3xl w-100px h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] 3xl:h-[400px]' alt="spark" />
+            <img src={SparkAd} className=' object-left rounded-3xl w-100px h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] 3xl:h-[400px]' alt="spark" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src={Clab} className='object-cover w-100px 3xl:h-[400px] h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] rounded-3xl' alt="clab" />
+            <img src={Clab} className='object-left w-100px 3xl:h-[400px] h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] rounded-3xl' alt="clab" />
         </SwiperSlide>
        
         </Swiper>
