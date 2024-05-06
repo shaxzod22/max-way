@@ -16,15 +16,9 @@ const cartSlice = createSlice({
             
             if(itemIndex>=0){
                 state.cartItems[itemIndex].cartQuantity +=1
-                toast.info(`${action.payload.name} soni oshirildi!`,{
-                    position:'bottom-left'
-                })
             }else{
                 const tempFood = {...action.payload, cartQuantity:1}
                 state.cartItems.push(tempFood)
-                toast.success(`${action.payload.name} savatga qo'shildi!`,{
-                    position:'bottom-left'
-                })
             }
             
             localStorage.setItem('cartItems',JSON.stringify(state.cartItems))
@@ -34,8 +28,7 @@ const cartSlice = createSlice({
             
             if(state.cartItems[itemIndex].cartQuantity>1){
                 state.cartItems[itemIndex].cartQuantity -=1
-                
-                toast.info(`${action.payload.name} soni kamaytirildi!`,{position:'bottom-left'})
+         
             }else if(state.cartItems[itemIndex].cartQuantity == 1){
                 const nextCartItems = state.cartItems.filter((item)=>item.id !=action.payload.id)
                 state.cartItems = nextCartItems

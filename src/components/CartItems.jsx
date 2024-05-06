@@ -2,8 +2,10 @@ import React, { useContext } from 'react'
 import { FaMinus } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Context } from '../App';
 import { addToCart, decreaseFromCart } from './redux/slice/CartSlice';
+import EmptyCart from './../assets/img/emptyCart.webp'
 
 const CartItems = () => {
     const [hasIntroModal,setHasIntroModal] = useContext(Context)
@@ -48,9 +50,13 @@ const CartItems = () => {
         <div className='px-4 max-w-[1200px] mx-auto'>
         <h1 className='text-[25px] xl:text-[32px] font-bold'>Savatcha</h1>
         <div className="flex xl:flex-row flex-col items-start w-full gap-4 xl:gap-0 justify-between pt-5 xl:pt-8">
-        <ul className='xl:max-w-[750px] flex flex-col gap-3 w-full border-collapse border-[1px] border-gray-100 rounded-lg'>
+        {cartItems.length? <ul className='xl:max-w-[750px] flex flex-col gap-3 w-full border-collapse border-[1px] border-gray-100 rounded-lg'>
       {renderItems(cartItems)}
-        </ul>
+        </ul>: <div className='text-[20px] md:text-[24px]'>
+            <img className='w-[200px] h-[150px] md:w-[350px] md:h-[250px]' src={EmptyCart} alt="empty cart" />
+            <h2 className='font-semibold'>Savat hozircha bo'sh!</h2>
+        <Link className='text-[18px] italic text-blue-300 underline' to={'/'}>Menyuga o'tish</Link>
+            </div>}
         
         <div className="py-6 sticky top-[10px] border-[1px] border-gray-100 rounded-lg px-[18px] w-full xl:max-w-[363px]">
         <div className="w-full">

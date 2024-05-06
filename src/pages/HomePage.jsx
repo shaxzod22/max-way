@@ -47,7 +47,7 @@ const HomePage = () => {
     const findQuantity = (item)=>{
       const itemIndex = cartItems.findIndex((product)=>product.id == item.id )
 
-      if(itemIndex>0){
+      if(itemIndex>=0){
       return cartItems[itemIndex].cartQuantity
       }else{
       return false
@@ -56,12 +56,12 @@ const HomePage = () => {
     }
     return(
       <>
-      <div id={type} className="pt-16 max-w-[1248px] mb-3 px-6 mx-auto">
+      <div id={type} className="pt-4 xl:pt-10 max-w-[1248px] mb-3 px-6 mx-auto">
       <h2 className={`text-[28px] font-bold mb-4`}>{type}</h2>
       <ul className='flex gap-4 flex-wrap justify-center md:justify-start'>
       {foodArr && foodArr.filter((food=>food?.type ==type)).map((item,index)=>(
-        <li className='w-[288px]  flex flex-col ' key={index}>
-        <img src={item.imgUrl} className='w-full rounded-t-xl h-[220px]' alt="food" />
+        <li className='max-w-[240px] sm:max-w-[250px] md:max-w-[260px] w-full xl:max-w-[288px]  flex flex-col ' key={index}>
+        <img src={item.imgUrl} className='w-full rounded-t-xl h-[200px] md:h-[220px]' alt="food" />
         <div className="px-4 flex-grow flex flex-col justify-end rounded-b-xl pt-3 pb-4 border-[1px] border-gray-100">
         <h3 className='text-[19px] mb-[7px] font-semibold'>{item?.name}</h3>
         {item?.description && <p className='text-[#48535B] text-[14px]'>{item?.description.slice(0,52)}...</p>}
@@ -87,7 +87,7 @@ const HomePage = () => {
         <Adcaroucel/>
         
         <div className={`${hasNavFood?'w-full shadow-md sticky top-0 bg-white':''} `}>
-        <div className="max-w-[1248px] gap-4 flex items-center px-6 mx-auto mt-8">
+        <div className="max-w-[1248px] gap-4 flex items-center px-6 mx-auto mt-4 lg:mt-8">
         <ul className='flex w-[1130px] py-2 items-center gap-3 overflow-x-auto scroll_hidden'>
         {typeArr.map((type,index)=>(
           <li className={`px-4 py-2 rounded-xl hover:bg-[#F1EFF4] cursor-pointer text-[18px] whitespace-nowrap`} onClick={()=>{

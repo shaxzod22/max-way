@@ -7,9 +7,12 @@ export const Context = React.createContext()
 
 function App() {
   const [hasIntroModal,setHasIntroModal] = useState(false)
+  const [place,setPlace] = useState('')
+  const [deliveryType,setDeliveryType] = useState(null)
+  const [hasPlaceChange,setHasPlaceChange] = useState(false)
   return (
     <>
-    <Context.Provider value={[hasIntroModal,setHasIntroModal]}>
+    <Context.Provider value={[hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange]}>
     <MainRoutes/>
     </Context.Provider>
     </>
