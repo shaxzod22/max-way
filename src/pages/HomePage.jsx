@@ -58,7 +58,7 @@ const HomePage = () => {
       <>
       <div id={type} className="pt-16 max-w-[1248px] mb-3 px-6 mx-auto">
       <h2 className={`text-[28px] font-bold mb-4`}>{type}</h2>
-      <ul className='flex gap-4 flex-wrap'>
+      <ul className='flex gap-4 flex-wrap justify-center md:justify-start'>
       {foodArr && foodArr.filter((food=>food?.type ==type)).map((item,index)=>(
         <li className='w-[288px]  flex flex-col ' key={index}>
         <img src={item.imgUrl} className='w-full rounded-t-xl h-[220px]' alt="food" />

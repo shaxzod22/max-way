@@ -29,10 +29,10 @@ const Adcaroucel = () => {
         className="mySwiper"
         >
         <SwiperSlide>
-            <img src={SparkAd} className=' object-left rounded-3xl w-100px h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] 3xl:h-[400px]' alt="spark" />
+            <img src={SparkAd} className=' object-left rounded-3xl w-100px h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] 3xl:h-[450px]' alt="spark" />
         </SwiperSlide>
         <SwiperSlide>
-            <img src={Clab} className='object-left w-100px 3xl:h-[400px] h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] rounded-3xl' alt="clab" />
+            <img src={Clab} className='object-left w-100px 3xl:h-[450px] h-[150px] md:h-[220px] lg:h-[280px] xl:h-[350px] rounded-3xl' alt="clab" />
         </SwiperSlide>
        
         </Swiper>

@@ -22,8 +22,8 @@ const CartItems = () => {
     
     const renderItems = (itemsArr)=>{
       return (itemsArr.map((item,index)=>(
-            <li key={index} className='w-full rounded-lg flex justify-between items-center py-6 px-5 border-[1px] border-gray-100'>
-            <div className="flex items-center gap-3">
+            <li key={index} className='w-full rounded-lg md:flex-row flex-col flex gap-4 md:gap-0 justify-between items-center py-6 px-5 border-[1px] border-gray-100'>
+            <div className="flex flex-col sm:flex-row w-full md:w-auto md:items-center gap-3">
             <img src={item?.imgUrl} alt="food" className='w-[78px] h-[78px] rounded-xl' />
             <div className="flex flex-col max-w-[350px]">
             <h2 className='text-[18px] font-semibold'>{item?.name}</h2>
@@ -31,7 +31,7 @@ const CartItems = () => {
             </div>
             </div>
             
-            <div className="flex items-center gap-2">
+            <div className="flex w-full justify-between md:justify-start md:w-auto items-center gap-2">
             <div className="flex items-center border-[1px] border-[#51267D] rounded-3xl gap-3 text-[17px] font-semibold">
             <button onClick={()=>handleDecreaseCart(item)} className='py-[4px] pl-[18px] '><FaMinus /></button>
             <span className='py-[4px]'>{item?.cartQuantity}</span>
@@ -46,16 +46,16 @@ const CartItems = () => {
 
     return (
         <div className='px-4 max-w-[1200px] mx-auto'>
-        <h1 className='text-[32px] font-bold'>Savatcha</h1>
-        <div className="flex items-start w-full justify-between pt-8">
-        <ul className='max-w-[750px] w-full border-collapse border-[1px] border-gray-100 rounded-lg'>
+        <h1 className='text-[25px] xl:text-[32px] font-bold'>Savatcha</h1>
+        <div className="flex xl:flex-row flex-col items-start w-full gap-4 xl:gap-0 justify-between pt-5 xl:pt-8">
+        <ul className='xl:max-w-[750px] flex flex-col gap-3 w-full border-collapse border-[1px] border-gray-100 rounded-lg'>
       {renderItems(cartItems)}
         </ul>
         
-        <div className="py-6 sticky top-[10px] border-[1px] border-gray-100 rounded-lg px-[18px] w-full max-w-[363px]">
+        <div className="py-6 sticky top-[10px] border-[1px] border-gray-100 rounded-lg px-[18px] w-full xl:max-w-[363px]">
         <div className="w-full">
         <h3 className='text-[20px] font-bold'>Umumiy</h3>
-        <div className="w-full text-[18px]">
+        <div className="w-full sm:text-[18px]">
         <div className="w-full flex  my-4 justify-between">
         <h4 className=''>Mahsulotlar</h4>
         <p className='font-semibold'>{cartTotalAmount.toLocaleString()} so'm</p>
@@ -67,7 +67,7 @@ const CartItems = () => {
         
         </div>
         
-        <div className="w-full text-[18px] border-t-[1px] border-gray-200 pt-4 my-4 flex justify-between">
+        <div className="w-full sm:text-[18px] border-t-[1px] border-gray-200 pt-4 my-4 flex justify-between">
         <h4>To'lash uchun</h4>
         <p className='font-semibold'>{(cartTotalAmount + deliveryCost).toLocaleString()} so'm</p>
         </div>

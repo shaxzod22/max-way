@@ -11,10 +11,10 @@ const CartPage = () => {
     dispatch(getTotalamount())
   },[cart,dispatch])
   
-  const cartItems = cart.cart
+
   
   return (
-    <div className='pt-6  border-t-2 border-gray-100'>
+    <div className='pt-4 xl:pt-6  border-t-2 border-gray-100'>
     <CartItems/>
     </div>
     )
