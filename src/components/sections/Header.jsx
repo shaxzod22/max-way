@@ -11,8 +11,7 @@ import { Context } from '../../App';
 
 
 const Header = () => {
-  const [hasBurger,setHasBurger] = useState(false)
-  const [hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange] = useContext(Context)
+  const [hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange,hasBurger,setHasBurger] = useContext(Context)
   const [isAllowToSubmit,setIsAllowToSubmit] = useState(false)
   
   
@@ -112,18 +111,19 @@ e.target.place.value = ''
     <div className="my-4 pb-4 border-b-[1px] border-gray-200">
     <p onClick={()=>{
       setHasIntroModal(!hasIntroModal)
-      setHasBurger(!hasBurger)
+      setHasBurger(false)
       document.body.style.overflow ='hidden'
     }} className='text-[#51267d] text-[18px] px-4 mb-[3px] font-semibold'>Kirish</p>
     </div>
     
     <div className="">
-    <Navbar/>
+    <Navbar />
     </div>
     
     </div>
     </div>
     <div className="max-w-[1200px] py-4 px-4 mx-auto flex items-center justify-between">
+      
     <div className="flex items-center xl:gap-[40px]">
     <button onClick={()=>{
       setHasBurger(!hasBurger)
@@ -138,6 +138,7 @@ e.target.place.value = ''
     <Navbar />
     </div>
     </div>
+
     <div className="flex items-center gap-[32px]">
     <button className='hidden xl:flex items-center gap-2'>
     <div className="w-[32px] h-[35px] flex items-center justify-center bg-[#F1EFF4] rounded-full">

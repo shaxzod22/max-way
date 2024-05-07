@@ -56,7 +56,7 @@ const HomePage = () => {
     }
     return(
       <>
-      <div id={type} className="pt-4 xl:pt-10 max-w-[1248px] mb-3 px-6 mx-auto">
+      <div id={type} className={` ${hasNavFood?'pt-16':'pt-8'} max-w-[1248px] mb-3 px-6 mx-auto`}>
       <h2 className={`text-[28px] font-bold mb-4`}>{type}</h2>
       <ul className='flex gap-4 flex-wrap justify-center md:justify-start'>
       {foodArr && foodArr.filter((food=>food?.type ==type)).map((item,index)=>(
@@ -84,13 +84,13 @@ const HomePage = () => {
       
       return (
         <div>
-        <Adcaroucel/>
+        <Adcaroucel />
         
         <div className={`${hasNavFood?'w-full shadow-md sticky top-0 bg-white':''} `}>
         <div className="max-w-[1248px] gap-4 flex items-center px-6 mx-auto mt-4 lg:mt-8">
         <ul className='flex w-[1130px] py-2 items-center gap-3 overflow-x-auto scroll_hidden'>
         {typeArr.map((type,index)=>(
-          <li className={`px-4 py-2 rounded-xl hover:bg-[#F1EFF4] cursor-pointer text-[18px] whitespace-nowrap`} onClick={()=>{
+          <li className={`px-4 py-2 rounded-xl active:bg-transparent hover:bg-[#F1EFF4] cursor-pointer text-[18px] whitespace-nowrap`} onClick={()=>{
             const typeHeading = document.getElementById(type)
             typeHeading.scrollIntoView({behavior:'smooth'})
           }} key={index}>
