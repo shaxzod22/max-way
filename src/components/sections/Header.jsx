@@ -11,7 +11,7 @@ import { Context } from '../../App';
 
 
 const Header = () => {
-  const [hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange,hasBurger,setHasBurger] = useContext(Context)
+  const {hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange,hasBurger,setHasBurger} = useContext(Context)
   const [isAllowToSubmit,setIsAllowToSubmit] = useState(false)
   
   

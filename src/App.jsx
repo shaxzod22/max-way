@@ -13,7 +13,7 @@ function App() {
   const [hasPlaceChange,setHasPlaceChange] = useState(false)
   return (
     <>
-    <Context.Provider value={[hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange,hasBurger,setHasBurger]}>
+    <Context.Provider value={{hasIntroModal,setHasIntroModal,place,setPlace,deliveryType,setDeliveryType,hasPlaceChange,setHasPlaceChange,hasBurger,setHasBurger}}>
     <MainRoutes/>
     </Context.Provider>
     </>

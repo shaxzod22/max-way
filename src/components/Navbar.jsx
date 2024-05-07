@@ -5,7 +5,7 @@ import { Context } from '../App';
 
 const Navbar = () => {
   const {pathname} = useLocation()
-  const [setHasBurger] = useContext(Context)
+  const {setHasBurger} = useContext(Context)
   
   return (
     <ul className='flex flex-col xl:flex-row text-[18px] items-center gap-[20px] xl:gap-[32px]'>

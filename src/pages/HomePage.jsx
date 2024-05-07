@@ -12,7 +12,7 @@ import { addToCart,decreaseFromCart,getTotalamount } from '../components/redux/s
 const HomePage = () => {
   const dispatch = useDispatch()
   const [hasNavFood,setHasNavFood] = useState(false)
-  const [hasIntroModal,setHasIntroModal] = useContext(Context)
+  const {hasIntroModal,setHasIntroModal} = useContext(Context)
   const cart = useSelector(state=>state.cart)
   const cartItems = cart.cartItems
  

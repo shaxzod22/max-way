@@ -8,7 +8,7 @@ import { addToCart, decreaseFromCart } from './redux/slice/CartSlice';
 import EmptyCart from './../assets/img/emptyCart.webp'
 
 const CartItems = () => {
-    const [hasIntroModal,setHasIntroModal] = useContext(Context)
+    const {hasIntroModal,setHasIntroModal} = useContext(Context)
     const cart = useSelector(state=>state.cart)
     const cartItems = cart.cartItems
     const cartTotalAmount = cart.cartTotalAmount
